@@ -1,10 +1,7 @@
-# Upstream sources
+# Upstream components, changes and data
 
-[mlfoundations/datacomp](https://github.com/mlfoundations/datacomp/tree/4a8df1992566ef8334773f7152e1855b1f716162)
-
-- Revision: 4a8df1992566ef8334773f7152e1855b1f716162
-- Reported code license: See original LICENSE at the pinned revision
-- Starting point: baselines.py
-- Integration: use the upstream implementation as a separately pinned dependency. Preserve the original notices when redistributing source.
-- Weights and data have separate terms. Their source, revision and attribution belong with the experiment manifest.
-Additional training source: https://github.com/huggingface/diffusers/tree/35087a644038eb531f48581708d4763044cb4852/examples/text_to_image (Apache-2.0)
+- **DataComp.** The inclusive score cutoff and top-fraction threshold in `src/curation.py` adapt `get_threshold` and `load_uids_with_clip_score_helper` from [the pinned author implementation](https://github.com/mlfoundations/datacomp/blob/4a8df1992566ef8334773f7152e1855b1f716162/baselines/apply_filter.py). The local port accepts an in-memory score array in place of parquet workers; the task-specific classifier supplies the scores. [MIT license and attribution](third_party/DataComp/LICENSE).
+- **Diffusers.** The model, scheduler and deterministic sampler use Diffusers 0.33.1 at [375ec930](https://github.com/huggingface/diffusers/tree/375ec930863ee74d0a0d5209f5627a5c89c752c2). Training follows its noise prediction and PEFT attention LoRA approach from [the text-to-image example](https://github.com/huggingface/diffusers/blob/375ec930863ee74d0a0d5209f5627a5c89c752c2/examples/text_to_image/train_text_to_image_lora.py), adapted for single-channel pixels and two structured caption tokens. It uses Diffusers through its Apache-2.0 package.
+- **PEFT.** PEFT 0.15.2 supplies adapter injection and state-dictionary save/reload. [PEFT release](https://github.com/huggingface/peft/tree/v0.15.2).
+- **Dataset.** E. Alpaydin and C. Kaynak, *Optical Recognition of Handwritten Digits*, UCI Machine Learning Repository. The published data license is [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Images and class labels come from [the UCI record](https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits) via [scikit-learn's packaged subset](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html). Captions, polarity renderings, gain variants and deliberate mismatches are programmatically produced for this experiment.
+- **Project contribution.** The source split, balanced sampling, near-duplicate and controlled-corruption experiment, mixture ablation, independent evaluation and all published weights were generated in this repository.

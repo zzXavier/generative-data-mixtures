@@ -1,0 +1,13 @@
+{
+  "seed": 5701,
+  "base_updates": 220,
+  "adapter_updates": 72,
+  "batch_size": 16,
+  "selected_per_arm": 120,
+  "generation_seeds": 4,
+  "sampling_steps": 16,
+  "train_timesteps": 50,
+  "adapter_lr": 0.003,
+  "base_lr": 0.002,
+  "top_score_fraction": 0.68
+}
