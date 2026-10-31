@@ -1,5 +1,16 @@
 # P08 handoff
 
+## Latest verified state · 2026-11-03
+
+Public release. [Personal portfolio](https://zzxavier.github.io/projects/) and [public README](https://github.com/zzXavier/generative-data-mixtures) were verified without authentication.
+
+Verified experiment revision: `df970329dc1b73e68021b600b8672e350da49dae`. A new GitHub checkout reproduced all six matched-budget LoRA runs; the rebuilt summary matched the archived table. The original DataComp selection independently recovered the same 561 IDs from 800 records.
+
+Next local command: `python run.py evaluate --out work/from-published-predictions`.
+
+## Earlier implementation notes
+
+
 **Verified run** `digits-cpu-5701` under `results/`. Six 72-step LoRAs completed, with nonzero update norms and exact state reload. The published 50/50 joint adapter has L2 update 4.4934. Its saved-weight demo regenerated samples. Re-evaluating the saved observations produced an identical summary CSV. The class accuracy of the six arms is 8.75–12.5%, so extending the conditional base's training budget is a distinct follow-up experiment. Fresh GitHub clone and site publication are checked by the release owner.
 
 The fixed configuration is in `configs/experiment.json`. Run `python run.py reproduce --out work/repeat` for a new complete CPU run. The data ships in scikit-learn. Saved observations can be re-tabulated with `python run.py evaluate --run results --out work/rebuilt`. Run `python run.py demo --out work/demo` to generate samples from the published joint-filter adapter.
