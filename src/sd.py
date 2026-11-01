@@ -1,4 +1,4 @@
-"""PEFT attention adapters used by the P08 Diffusers conditional generator."""
+"""PEFT attention adapters used by the conditional image generator."""
 import random
 import numpy as np
 import torch

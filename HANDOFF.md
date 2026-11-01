@@ -1,8 +1,8 @@
-# P08 handoff
+# Generative data mixtures handoff
 
 ## Latest verified state · 2026-11-03
 
-Public release. [Personal portfolio](https://zzxavier.github.io/projects/) and [public README](https://github.com/zzXavier/generative-data-mixtures) were verified without authentication.
+The public README and experiment artifacts are available from the [repository](https://github.com/zzXavier/generative-data-mixtures).
 
 Verified experiment revision: `df970329dc1b73e68021b600b8672e350da49dae`. A new GitHub checkout reproduced all six matched-budget LoRA runs; the rebuilt summary matched the archived table. The original DataComp selection independently recovered the same 561 IDs from 800 records.
 
